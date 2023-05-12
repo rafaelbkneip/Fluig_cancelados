@@ -1,3 +1,5 @@
+#Módulo para logar no site / Module to log in to yhe website
+
 #Importações / Imports
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -12,6 +14,7 @@ options = Options()
 options.add_argument("--start-maximized")
 options.add_experimental_option("detach", True)
 
+#Definir função / Define function
 def login():
     #Acessar portal / Access website
     navegador = webdriver.Chrome(ChromeDriverManager().install(), options = options)
