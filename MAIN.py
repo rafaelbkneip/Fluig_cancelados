@@ -41,7 +41,7 @@ inicio = definir_intervalo.intervalo(fluigs, conferencia)
 print("A leitura será iniciada pelo Fluig " + str(inicio))
 
 #Determinar loop / Determine loop
-#Escrever os resultados na planilha após a leitura de 50 chamados a partir do incial, definido anteriormente / Write the results after reading 50 solicitations starting from the initial one, previously defined
+#Escrever os resultados na planilha após a leitura de 50 chamados a partir do incial, definido anteriormente / Write the results after reading 50 solicitations, starting with the initial one, previously defined
 while (inicio + 50 < len(fluigs)):
 
   #Obter os status das solicitações / Get the solicitation status

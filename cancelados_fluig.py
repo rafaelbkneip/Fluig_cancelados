@@ -33,7 +33,7 @@ def scraper(navegador, inicio, fluigs):
     escondidos_str =[]
 
     #Cada página possui elementos para cada um dos status. O status real é definido pelo elemento que não é da class 'hide'/
-    #A element for each solicitation status can be find on every page. The real solicitation status is defined by the element that does not have the 'hide' class
+    #On every page, a element for each solicitation status can be found. The real solicitation status is defined by the element that does not have the 'hide' class
 
     #Obter o elemento que representa o status 'Cancelado' / Get the element with the 'Cancelled' status
     cancelado = (navegador.find_elements(By.CLASS_NAME, 'ativ-cancelado'))
@@ -49,7 +49,7 @@ def scraper(navegador, inicio, fluigs):
 
     contagem = (escondidos_str.count(cancelado_str[0]))
 
-    #Se o elemento 'cancelado' não está escondido na página, o chamada está, de fato, cancelado / If the 'canceled' element is not hided on the page, the solicitations is, in fact, cancelled
+    #Se o elemento 'cancelado' não está escondido na página, o chamada está, de fato, cancelado / If the 'cancelled' element is not hidden on the page, the solicitation is, in fact, cancelled
     if (contagem==0):
       situacao_aux.append('CANCELADO')
 
