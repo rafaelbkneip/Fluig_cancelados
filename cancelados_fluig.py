@@ -18,7 +18,7 @@ def scraper(navegador, inicio, fluigs):
     #Garantir que a página está totalmente carregada / Make sure that the page is completely loaded
     sleep(20)
 
-    print("Solcitação lida: ", fluigs[j][0])
+    print("Solcitação lida:", fluigs[j][0])
 
     #Acessar a página da solciitação / Acess the solicition page
     navegador.get("http://fluig.raizeducacao.com.br/portal/p/01/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=" + str(fluigs[j][0]))

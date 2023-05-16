@@ -29,7 +29,7 @@ service = build('sheets', 'v4', credentials=creds)
 sheet = service.spreadsheets()
 result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME).execute()    
 fluigs = result['values']
-print("A planilha consta com " + str(len(fluigs)) + " lançados.")
+print("A planilha consta com " + str(len(fluigs)) + " lançamentos.")
 
 navegador = login.login()
 
@@ -50,7 +50,7 @@ while (inicio + 50 < len(fluigs)):
   print(respostas)
 
   #Escrever os resultados na planilha / Write the results on the spreadsheet
-  result = sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, range='Fluigs!P' + str(inicio + 1) + ':P' + str( inicio + 1 + len(respostas)), valueInputOption = 'USER_ENTERED', body={'values': respostas}).execute()
+  result = sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, range='Fluigs!N' + str(inicio + 1) + ':N' + str( inicio + 1 + len(respostas)), valueInputOption = 'USER_ENTERED', body={'values': respostas}).execute()
   
   #Definir uma nova solicitação inicial / Define a new initial solicitation
   inicio = inicio + 50
