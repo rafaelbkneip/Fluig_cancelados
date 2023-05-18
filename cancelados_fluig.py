@@ -13,10 +13,7 @@ def scraper(navegador, inicio, fluigs):
   situacao=[]
   situacao_aux=[]
 
-  for j in range(inicio,inicio+50): 
-
-    #Garantir que a página está totalmente carregada / Make sure that the page is completely loaded
-    
+  for j in range(inicio,inicio+10): 
 
     print("Solcitação lida:", fluigs[j][0])
 
