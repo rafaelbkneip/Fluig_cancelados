@@ -11,13 +11,14 @@ import cancelados_fluig
 import return_date
 import definir_intervalo
 import login
+import intervalo_manual
 
 #Definir escopo da autorização / Define authorization scope
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 #Definir planilha pelo seu ID e intervalo de células / Define spreadsheet by its ID and cell intervall
 SAMPLE_SPREADSHEET_ID = ''
-SAMPLE_RANGE_NAME = ''
+SAMPLE_RANGE_NAME = 'Fluigs!A:N'
 
 #Acessar token de autorização / Access authorization token
 creds = None
@@ -31,14 +32,17 @@ result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RA
 fluigs = result['values']
 print("A planilha consta com " + str(len(fluigs)) + " lançamentos.")
 
-navegador = login.login()
-
 #Determinar dia da semana / Determine day of the week
 conferencia = return_date.today()
 
 #Determinar intervalo / Determine range
 inicio = definir_intervalo.intervalo(fluigs, conferencia)
-print("A leitura será iniciada pelo Fluig " + str(inicio))
+print("A leitura será iniciada pelo Fluig " + str(fluigs[inicio][0]))
+
+inicio = intervalo_manual.intervalo(fluigs, str(137925))
+print(inicio)
+
+navegador = login.login()
 
 #Determinar loop / Determine loop
 #Escrever os resultados na planilha após a leitura de 50 chamados a partir do incial, definido anteriormente / Write the results after reading 50 solicitations, starting with the initial one, previously defined

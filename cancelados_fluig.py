@@ -16,7 +16,7 @@ def scraper(navegador, inicio, fluigs):
   for j in range(inicio,inicio+50): 
 
     #Garantir que a página está totalmente carregada / Make sure that the page is completely loaded
-    sleep(20)
+    
 
     print("Solcitação lida:", fluigs[j][0])
 
